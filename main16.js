@@ -143,15 +143,10 @@ const paginationRender = () => {
       i === page ? "active" : ""
     }" onclick="moveToPage(${i})"><a class="page-link" href="#1">${i}</a></li>`;
   }
-  if (lastPage == totalPages) {
-    paginationHTML += "";
-  } else {
-    paginationHTML += ` <li class="page-item" onclick="moveToPage(${
-      page + 1
-    })"><a class="page-link" href="#1">&gt</a></li>
-    <li class="page-item" onclick="moveToPage(${totalPages})"><a class="page-link" href="#1">&raquo</a></li>`;
-  }
-
+  paginationHTML += ` <li class="page-item" onclick="moveToPage(${
+    page + 1
+  })"><a class="page-link" href="#1">&gt</a></li>
+  <li class="page-item" onclick="moveToPage(${totalPages})"><a class="page-link" href="#1">&raquo</a></li>`;
   document.querySelector(".pagination").innerHTML = paginationHTML;
 };
 
