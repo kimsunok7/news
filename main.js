@@ -7,7 +7,7 @@ menus.forEach((menu) => {
 });
 
 let url = new URL(
-  `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
+  `https://lustrous-quokka-c9ccab.netlify.app/top-headlines?country=us&apiKey=${API_KEY}`
 );
 
 let totalResults = 0;
@@ -56,7 +56,7 @@ const getLatestNews = async () => {
   // render();
   // console.log("news", newsList);
   url = new URL(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
+    `https://lustrous-quokka-c9ccab.netlify.app/top-headlines?country=us&apiKey=${API_KEY}`
   );
   getNews();
 };
@@ -66,7 +66,7 @@ const getNewsByCategory = async (event) => {
   const category = event.target.textContent.toLowerCase();
   console.log("category", category);
   url = new URL(
-    `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
+    `https://lustrous-quokka-c9ccab.netlify.app/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
   );
   // const response = await fetch(url);
   // const data = await response.json();
@@ -80,7 +80,7 @@ const getNewsByKeyword = async () => {
   const keyword = document.getElementById("search-input").value;
   console.log("keyword", keyword);
   url = new URL(
-    `https://newsapi.org/v2/top-headlines?country=us&q=${keyword}&apiKey=${API_KEY}`
+    `https://lustrous-quokka-c9ccab.netlify.app/top-headlines?country=us&q=${keyword}&apiKey=${API_KEY}`
   );
   // const response = await fetch(url);
   // const data = await response.json();
