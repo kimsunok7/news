@@ -8,26 +8,36 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="container">
-      <div class="search">
-        <input
-          type="text"
-          id="search-input"
-          name="username"
-          placeholder="search"
-        />
+      <div class="top">
+        <i class="fa-solid fa-bars" id="mo-menu" onclick="show()"></i>
+        <i class="fa-solid fa-magnifying-glass" id="mo-search"></i>
+        <div class="search">
+          <input
+            type="text"
+            id="search-input"
+            name="username"
+            placeholder="search"
+          />
 
-        <button
-          type="button"
-          class="btn btn-secondary btn-sm"
-          onclick="getNewsByKeyword()"
-        >
-          검색
-        </button>
+          <button
+            type="button"
+            class="btn btn-secondary btn-sm"
+            onclick="getNewsByKeyword()"
+          >
+            검색
+          </button>
+        </div>
       </div>
+
       <section>
         <div class="head-line">
           <svg viewBox="0 0 184 25" fill="#000" aria-hidden="true">
@@ -36,14 +46,19 @@
             ></path>
           </svg>
         </div>
-        <div class="menus">
-          <button>Business</button>
-          <button>Entertainment</button>
-          <button>General</button>
-          <button>Health</button>
-          <button>Science</button>
-          <button>Sports</button>
-          <button>Technology</button>
+        <div id="mo-head">
+          <div id="close" onclick="hide()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="menus">
+            <button>Business</button>
+            <button>Entertainment</button>
+            <button>General</button>
+            <button>Health</button>
+            <button>Science</button>
+            <button>Sports</button>
+            <button>Technology</button>
+          </div>
         </div>
       </section>
       <section id="news-board">

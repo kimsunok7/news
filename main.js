@@ -1,7 +1,29 @@
 const API_KEY = "1da975d52f9948caa279024b4220f4d3";
 let newsList = [];
 const menus = document.querySelectorAll(".menus button");
+
 // console.log("mm", menus);
+
+const moSearch = document.getElementById("mo-search");
+const search = document.querySelector(".search");
+const moHead = document.getElementById("mo-head");
+const moMenu = document.getElementById("mo-menu");
+
+moSearch.addEventListener("click", () => {
+  console.log("dd");
+  search.classList.toggle("active");
+});
+
+function hide() {
+  console.log("hide");
+  moHead.style.left = "-50%";
+}
+
+function show() {
+  console.log("show");
+  moHead.style.left = "0%";
+}
+
 menus.forEach((menu) => {
   menu.addEventListener("click", (event) => getNewsByCategory(event));
 });
