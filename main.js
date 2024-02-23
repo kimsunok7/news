@@ -120,23 +120,36 @@ const errorRender = (errorMessage) => {
 const render = () => {
   const newsHTML = newsList
     .map(
-      (news) => `<div class="row news">
+      (news) =>
+        `<div class="row news">
     <div class="col-lg-4">
       <img
-        class="news-img-size"
+        class="news-img-size" onerror = "this.src='https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg'"
         src=${news.urlToImage}
       />
     </div>
     <div class="col-lg-8">
       <h2>${news.title}</h2>
-      <p>${news.description}</p>
-      <div>${news.source.name} * ${news.publishedAt}</div>
+     
+      <p>${
+        news.description == null || news.description == ""
+          ? "내용없습니다"
+          : news.description.length > 200
+          ? news.description.substring(0, 200) + "..."
+          : news.description
+      }</p>
+      <div>${
+        news.source.name == null || news.source.name == ""
+          ? "no source"
+          : news.source.name
+      } * ${moment(news.publishedAt).fromNow()}</div>
+      
     </div>
   </div>
     `
     )
     .join("");
-  console.log("html", newsHTML);
+  // console.log("html", newsHTML);
 
   document.getElementById("news-board").innerHTML = newsHTML;
 };
